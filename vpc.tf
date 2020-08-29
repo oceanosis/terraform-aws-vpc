@@ -24,7 +24,6 @@ resource "aws_subnet" "main-public-1" {
         Name = "main-public-1"
         Tier = "Public"
     }
-
     depends_on = [aws_vpc.main]
 
 }
@@ -169,16 +168,4 @@ resource "aws_route_table_association" "main-private-2-a" {
 resource "aws_route_table_association" "main-private-3-a" {
     subnet_id = aws_subnet.main-private-3.id
     route_table_id = aws_route_table.main-private.id
-}
-data "aws_subnet" "public" {
-    filter {
-        name   = "tag:Tier"
-        values = ["Public" ]
-    }
-}
-data "aws_subnet" "private" {
-    filter {
-        name   = "tag:Tier"
-        values = ["Private" ]
-    }
 }
