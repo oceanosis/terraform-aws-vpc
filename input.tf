@@ -1,5 +1,4 @@
-variable "AWS_ACCESS_KEY" {}
-variable "AWS_SECRET_KEY" {}
+
 variable "AWS_REGION" {
   default = "eu-west-2"
 }
@@ -15,4 +14,11 @@ variable "vpc_cidr" {
 variable "availability_zone_names" {
   type    = list(string)
   default = ["eu-west-2a","eu-west-2b","eu-west-2c"]
+}
+
+variable "private_subnet_count" {
+  default = 1
+}
+variable "public_subnet_count" {
+  default = 1
 }
