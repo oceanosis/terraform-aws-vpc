@@ -16,9 +16,3 @@ variable "availability_zone_names" {
   default = ["eu-west-2a","eu-west-2b","eu-west-2c"]
 }
 
-variable "private_subnet_count" {
-  default = 1
-}
-variable "public_subnet_count" {
-  default = 1
-}
